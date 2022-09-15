@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        header {
+            margin: 0 auto;
+            width: 1000px;
+            font: 1em sans-serif;
+
+        }
+        body {
+            /* Center the form on the page */
+            margin: 0 auto;
+            width: 1000px;
+            /* Form outline */
+            padding: 2em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+        }
+
+        ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        label {
+            /* Uniform size & alignment */
+            display: inline-block;
+            width: 90px;
+            text-align: right;
+        }
+
+        input,
+        radio {
+            /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+            font: 1em sans-serif;
+            /* Uniform text field size */
+            width: 30px;
+            }
+
+            input:focus,
+            textarea:focus {
+                /* Additional highlight for focused elements */
+                border-color: #000;
+            }
+
+        
+
+        .button {
+            /* Align buttons with the text fields */
+            padding-left: 90px; /* same size as the label elements */
+        }
+
+        button {
+            /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+            margin-left: 0.5em;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" scr="./scripts.js"></script>
+    <title>Test predyspozycji zawodowych</title>
+</head>
+<body>
+    <header>
+        <center><h1>Test Predyspozycji Zawodowych</h1></center>
+    </header>
+    <br />
+    <br />
+    <ol type="1">
+        <li>
+            1. Posiadam uzdolnienia manualne.
+            <p>
+                <input type="radio" name="q1" id="q1a0" value="0" required />0
+                <input type="radio" name="q1" id="q1a1" value="1" />1
+                <input type="radio" name="q1" id="q1a2" value="2" />2
+                <input type="radio" name="q1" id="q1a3" value="3" />3
+                <input type="radio" name="q1" id="q1a4" value="4" />4
+                <input type="radio" name="q1" id="q1a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            2. Posiadam dobre wyczucie kierunku
+            <p>
+                <input type="radio" name="q2" id="q2a0" value="0" required />0
+                <input type="radio" name="q2" id="q2a1" value="1" />1
+                <input type="radio" name="q2" id="q2a2" value="2" />2
+                <input type="radio" name="q2" id="q2a3" value="3" />3
+                <input type="radio" name="q2" id="q2a4" value="4" />4
+                <input type="radio" name="q2" id="q2a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            3. Posiadam umiejętność rozwiązywania sporów między ludźmi
+            <p>
+                <input type="radio" name="q3" id="q2a0" value="0" required />0
+                <input type="radio" name="q3" id="q2a1" value="1" />1
+                <input type="radio" name="q3" id="q2a2" value="2" />2
+                <input type="radio" name="q3" id="q2a3" value="3" />3
+                <input type="radio" name="q3" id="q2a4" value="4" />4
+                <input type="radio" name="q3" id="q2a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            4.	Z łatwością zapamiętuje słowa utworów, piosenek.
+            <p>
+                <input type="radio" name="q4" id="q4a0" value="0" required />0
+                <input type="radio" name="q4" id="q4a1" value="1" />1
+                <input type="radio" name="q4" id="q4a2" value="2" />2
+                <input type="radio" name="q4" id="q4a3" value="3" />3
+                <input type="radio" name="q4" id="q4a4" value="4" />4
+                <input type="radio" name="q4" id="q4a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            5.	Potraﬁę wyjaśnić w prosty sposób trudniejsze zagadnienia.
+            <p>
+                <input type="radio" name="q5" id="q5a0" value="0" required />0
+                <input type="radio" name="q5" id="q5a1" value="1" />1
+                <input type="radio" name="q5" id="q5a2" value="2" />2
+                <input type="radio" name="q5" id="q5a3" value="3" />3
+                <input type="radio" name="q5" id="q5a4" value="4" />4
+                <input type="radio" name="q5" id="q5a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            6.	Lubię przyglądać się zwierzętom, owadom, roślinom.
+            <p>
+                <input type="radio" name="q6" id="q6a0" value="0" required />0
+                <input type="radio" name="q6" id="q6a1" value="1" />1
+                <input type="radio" name="q6" id="q6a2" value="2" />2
+                <input type="radio" name="q6" id="q6a3" value="3" />3
+                <input type="radio" name="q6" id="q6a4" value="4" />4
+                <input type="radio" name="q6" id="q6a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            7.	Wszystko wykonuje krok po kroku, planuje.
+            <p>
+                <input type="radio" name="q7" id="q7a0" value="0" required />0
+                <input type="radio" name="q7" id="q7a1" value="1" />1
+                <input type="radio" name="q7" id="q7a2" value="2" />2
+                <input type="radio" name="q7" id="q7a3" value="3" />3
+                <input type="radio" name="q7" id="q7a4" value="4" />4
+                <input type="radio" name="q7" id="q7a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            8.	Dobrze znam samego siebie i rozumiem swoje postępowanie.
+            <p>
+                <input type="radio" name="q8" id="q8a0" value="0" required />0
+                <input type="radio" name="q8" id="q8a1" value="1" />1
+                <input type="radio" name="q8" id="q8a2" value="2" />2
+                <input type="radio" name="q8" id="q8a3" value="3" />3
+                <input type="radio" name="q8" id="q8a4" value="4" />4
+                <input type="radio" name="q8" id="q8a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            9.	Lubię ćwiczenia grupowe i spotkania towarzyskie.
+            <p>
+                <input type="radio" name="q9" id="q9a0" value="0" required />0
+                <input type="radio" name="q9" id="q9a1" value="1" />1
+                <input type="radio" name="q9" id="q9a2" value="2" />2
+                <input type="radio" name="q9" id="q9a3" value="3" />3
+                <input type="radio" name="q9" id="q9a4" value="4" />4
+                <input type="radio" name="q9" id="q9a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            10.	Dobrze uczę się słuchając wykładów i wywodów innych ludzi.
+            <p>
+                <input type="radio" name="q10" id="q2a0" value="0" required />0
+                <input type="radio" name="q10" id="q2a1" value="1" />1
+                <input type="radio" name="q10" id="q2a2" value="2" />2
+                <input type="radio" name="q10" id="q2a3" value="3" />3
+                <input type="radio" name="q10" id="q2a4" value="4" />4
+                <input type="radio" name="q10" id="q2a5" value="5" />5
+            </p>
+        </li>
+
+        <li>
+            11.	Słuchając muzyki doznaję zmian nastroju.
+            <p>
+                <input type="radio" name="q11" id="q11a0" value="0" required />0
+                <input type="radio" name="q11" id="q11a1" value="1" />1
+                <input type="radio" name="q11" id="q11a2" value="2" />2
+                <input type="radio" name="q11" id="q11a3" value="3" />3
+                <input type="radio" name="q11" id="q11a4" value="4" />4
+                <input type="radio" name="q11" id="q11a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            12.	Lubię rozwiązywać krzyżówki, łamigłówki, problemy logiczne.
+            <p>
+                <input type="radio" name="q12" id="q12a0" value="0" required />0
+                <input type="radio" name="q12" id="q12a1" value="1" />1
+                <input type="radio" name="q12" id="q12a2" value="2" />2
+                <input type="radio" name="q12" id="q12a3" value="3" />3
+                <input type="radio" name="q12" id="q12a4" value="4" />4
+                <input type="radio" name="q12" id="q12a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            13.	Tablice, zestawienia i pomoce wizualne pomagają mi w uczeniu się.
+            <p>
+                <input type="radio" name="q13" id="q13a0" value="0" required />0
+                <input type="radio" name="q13" id="q13a1" value="1" />1
+                <input type="radio" name="q13" id="q13a2" value="2" />2
+                <input type="radio" name="q13" id="q13a3" value="3" />3
+                <input type="radio" name="q13" id="q13a4" value="4" />4
+                <input type="radio" name="q13" id="q13a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            14.	Zależy mi na przyrodzie i otaczającym mnie środowisku.
+            <p>
+                <input type="radio" name="q14" id="q14a0" value="0" required />0
+                <input type="radio" name="q14" id="q14a1" value="1" />1
+                <input type="radio" name="q14" id="q14a2" value="2" />2
+                <input type="radio" name="q14" id="q14a3" value="3" />3
+                <input type="radio" name="q14" id="q14a4" value="4" />4
+                <input type="radio" name="q14" id="q14a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            15.	Jestem wrażliwy na uczucia i emocje otaczających mnie ludzi.
+            <p>
+                <input type="radio" name="q15" id="q15a0" value="0" required />0
+                <input type="radio" name="q15" id="q15a1" value="1" />1
+                <input type="radio" name="q15" id="q15a2" value="2" />2
+                <input type="radio" name="q15" id="q15a3" value="3" />3
+                <input type="radio" name="q15" id="q15a4" value="4" />4
+                <input type="radio" name="q15" id="q15a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            16.	Najlepiej się uczę (działam), gdy wiem, że tylko ja jestem odpowiedzialny/a za wyniki mojej pracy.
+            <p>
+                <input type="radio" name="q16" id="q16a0" value="0" required />0
+                <input type="radio" name="q16" id="q16a1" value="1" />1
+                <input type="radio" name="q16" id="q16a2" value="2" />2
+                <input type="radio" name="q16" id="q16a3" value="3" />3
+                <input type="radio" name="q16" id="q16a4" value="4" />4
+                <input type="radio" name="q16" id="q16a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            17.	Zanim zacznę się czegoś uczyć, muszę sprawdzić, ile mogę na tym zyskać.
+            <p>
+                <input type="radio" name="q17" id="q17a0" value="0" required />0
+                <input type="radio" name="q17" id="q17a1" value="1" />1
+                <input type="radio" name="q17" id="q17a2" value="2" />2
+                <input type="radio" name="q17" id="q17a3" value="3" />3
+                <input type="radio" name="q17" id="q17a4" value="4" />4
+                <input type="radio" name="q17" id="q17a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            18.	Podczas nauki i pracy lubię spokój i samotność.
+            <p>
+                <input type="radio" name="q18" id="q18a0" value="0" required />0
+                <input type="radio" name="q18" id="q18a1" value="1" />1
+                <input type="radio" name="q18" id="q18a2" value="2" />2
+                <input type="radio" name="q18" id="q18a3" value="3" />3
+                <input type="radio" name="q18" id="q18a4" value="4" />4
+                <input type="radio" name="q18" id="q18a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            19.	Potraﬁę usłyszeć poszczególne instrumenty w złożonych
+            utworach muzycznych.
+            <p>
+                <input type="radio" name="q19" id="q19a0" value="0" required />0
+                <input type="radio" name="q19" id="q19a1" value="1" />1
+                <input type="radio" name="q19" id="q19a2" value="2" />2
+                <input type="radio" name="q19" id="q19a3" value="3" />3
+                <input type="radio" name="q19" id="q19a4" value="4" />4
+                <input type="radio" name="q19" id="q19a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            20.	Łatwo przychodzi mi wywoływanie w wyobraźni zapamiętywanych i wymyślonych obrazów.
+            <p>
+                <input type="radio" name="q20" id="q20a0" value="0" required />0
+                <input type="radio" name="q20" id="q20a1" value="1" />1
+                <input type="radio" name="q20" id="q20a2" value="2" />2
+                <input type="radio" name="q20" id="q20a3" value="3" />3
+                <input type="radio" name="q20" id="q20a4" value="4" />4
+                <input type="radio" name="q20" id="q20a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            21. Posiadam bogaty zasób słownictwa i potraﬁę się nim posługiwać.
+            <p>
+                <input type="radio" name="q21" id="q21a0" value="0" required />0
+                <input type="radio" name="q21" id="q21a1" value="1" />1
+                <input type="radio" name="q21" id="q21a2" value="2" />2
+                <input type="radio" name="q21" id="q21a3" value="3" />3
+                <input type="radio" name="q21" id="q21a4" value="4" />4
+                <input type="radio" name="q21" id="q21a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            22.	Lubię robić notatki.
+            <p>
+                <input type="radio" name="q22" id="q22a0" value="0" required />0
+                <input type="radio" name="q22" id="q22a1" value="1" />1
+                <input type="radio" name="q22" id="q22a2" value="2" />2
+                <input type="radio" name="q22" id="q22a3" value="3" />3
+                <input type="radio" name="q22" id="q22a4" value="4" />4
+                <input type="radio" name="q22" id="q22a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            23.	Posiadam dobre poczucie równowagi i lubię ruch ﬁzyczny.
+            <p>
+                <input type="radio" name="q23" id="q23a0" value="0" required />0
+                <input type="radio" name="q23" id="q23a1" value="1" />1
+                <input type="radio" name="q23" id="q23a2" value="2" />2
+                <input type="radio" name="q23" id="q23a3" value="3" />3
+                <input type="radio" name="q23" id="q23a4" value="4" />4
+                <input type="radio" name="q23" id="q23a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            24.	Potraﬁę dostrzegać strukturę przedmiotów i związki między
+            różnymi rzeczami.
+            <p>
+                <input type="radio" name="q24" id="q24a0" value="0" required />0
+                <input type="radio" name="q24" id="q24a1" value="1" />1
+                <input type="radio" name="q24" id="q24a2" value="2" />2
+                <input type="radio" name="q24" id="q24a3" value="3" />3
+                <input type="radio" name="q24" id="q24a4" value="4" />4
+                <input type="radio" name="q24" id="q24a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            25.	Potraﬁę pracować tylko w zespole i korzystać z cudzych doświadczeń.
+            <p>
+                <input type="radio" name="q25" id="q25a0" value="0" required />0
+                <input type="radio" name="q25" id="q25a1" value="1" />1
+                <input type="radio" name="q25" id="q25a2" value="2" />2
+                <input type="radio" name="q25" id="q25a3" value="3" />3
+                <input type="radio" name="q25" id="q25a4" value="4" />4
+                <input type="radio" name="q25" id="q25a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            26.	Jestem dobrym obserwatorem i często zauważam rzeczy
+            uchodzące uwadze innych.
+            <p>
+                <input type="radio" name="q26" id="q26a0" value="0" required />0
+                <input type="radio" name="q26" id="q26a1" value="1" />1
+                <input type="radio" name="q26" id="q26a2" value="2" />2
+                <input type="radio" name="q26" id="q26a3" value="3" />3
+                <input type="radio" name="q26" id="q26a4" value="4" />4
+                <input type="radio" name="q26" id="q26a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            27.	Często bywam niespokojny.
+            <p>
+                <input type="radio" name="q27" id="q27a0" value="0" required />0
+                <input type="radio" name="q27" id="q27a1" value="1" />1
+                <input type="radio" name="q27" id="q27a2" value="2" />2
+                <input type="radio" name="q27" id="q27a3" value="3" />3
+                <input type="radio" name="q27" id="q27a4" value="4" />4
+                <input type="radio" name="q27" id="q27a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            28.	Lubię pracować/uczuć się niezależnie od innych.
+            <p>
+                <input type="radio" name="q28" id="q28a0" value="0" required />0
+                <input type="radio" name="q28" id="q28a1" value="1" />1
+                <input type="radio" name="q28" id="q28a2" value="2" />2
+                <input type="radio" name="q28" id="q28a3" value="3" />3
+                <input type="radio" name="q28" id="q28a4" value="4" />4
+                <input type="radio" name="q28" id="q28a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            29.	Lubię komponować muzykę.
+            <p>
+                <input type="radio" name="q29" id="q29a0" value="0" required />0
+                <input type="radio" name="q29" id="q29a1" value="1" />1
+                <input type="radio" name="q29" id="q29a2" value="2" />2
+                <input type="radio" name="q29" id="q29a3" value="3" />3
+                <input type="radio" name="q29" id="q29a4" value="4" />4
+                <input type="radio" name="q29" id="q29a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            30.	Lubię zwierzęta domowe.
+            <p>
+                <input type="radio" name="q30" id="q30a0" value="0" required />0
+                <input type="radio" name="q30" id="q30a1" value="1" />1
+                <input type="radio" name="q30" id="q30a2" value="2" />2
+                <input type="radio" name="q30" id="q30a3" value="3" />3
+                <input type="radio" name="q30" id="q30a4" value="4" />4
+                <input type="radio" name="q30" id="q30a5" value="5" />5
+            </p>
+        </li>
+
+
+        <li>
+            31.	Potraﬁę radzić sobie z licznymi obliczeniami matematycznymi.
+            <p>
+                <input type="radio" name="q31" id="q31a0" value="0" required />0
+                <input type="radio" name="q31" id="q31a1" value="1" />1
+                <input type="radio" name="q31" id="q31a2" value="2" />2
+                <input type="radio" name="q31" id="q31a3" value="3" />3
+                <input type="radio" name="q31" id="q31a4" value="4" />4
+                <input type="radio" name="q31" id="q31a5" value="5" />5
+            </p>
+        </li>
+        <li>
+            32.	Lubię pracować, uczyć się na zewnątrz.
+            <p>
+                <input type="radio" name="q32" id="q32a0" value="0" required />0
+                <input type="radio" name="q32" id="q32a1" value="1" />1
+                <input type="radio" name="q32" id="q32a2" value="2" />2
+                <input type="radio" name="q32" id="q32a3" value="3" />3
+                <input type="radio" name="q32" id="q32a4" value="4" />4
+                <input type="radio" name="q32" id="q32a5" value="5" />5
+            </p>
+        </li>
+    </ol>
+    <center><button id="Sub" type="button" style="height:80px;width:140px">Wyślij</button></center>
+    <br />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script src="./scripts.js">
+    </script>
+    <p id="output">
+        Sample Text
+    </p>
+    <canvas id="myChart" style="width:100%;max-width:900px"></canvas>
+</body>
+</html>
