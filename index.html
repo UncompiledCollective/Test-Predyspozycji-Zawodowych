@@ -2,66 +2,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <style>
-        header {
-            margin: 0 auto;
-            width: 1000px;
-            font: 1em sans-serif;
-
-        }
-        body {
-            /* Center the form on the page */
-            margin: 0 auto;
-            width: 1000px;
-            /* Form outline */
-            padding: 2em;
-            border: 1px solid #ccc;
-            border-radius: 1em;
-        }
-
-        ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        label {
-            /* Uniform size & alignment */
-            display: inline-block;
-            width: 90px;
-            text-align: right;
-        }
-
-        input,
-        radio {
-            /* To make sure that all text fields have the same font settings
-     By default, textareas have a monospace font */
-            font: 1em sans-serif;
-            /* Uniform text field size */
-            width: 30px;
-            }
-
-            input:focus,
-            textarea:focus {
-                /* Additional highlight for focused elements */
-                border-color: #000;
-            }
-
-        
-
-        .button {
-            /* Align buttons with the text fields */
-            padding-left: 90px; /* same size as the label elements */
-        }
-
-        button {
-            /* This extra margin represent roughly the same space as the space
-     between the labels and their text fields */
-            margin-left: 0.5em;
-        }
-    </style>
     <meta charset="utf-8" />
     <title></title>
     <script type="text/javascript" scr="./scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js">
+    </script>
+    <link rel="stylesheet" href="./stylesheet1.css" />
     <title>Test predyspozycji zawodowych</title>
 </head>
 <body>
@@ -458,15 +404,63 @@
             </p>
         </li>
     </ol>
+    <p><center><button id="autoBot" type="button" style="height:80px;width:140px">Auto</button></center></p>
+    <script>
+        let input = document.getElementById("autoBot");
+        input.addEventListener("click", function (event) {
+            let array = [0, 1, 2, 3, 4, 5];
+            for (c = 1; c <= 32; c++) {
+                const randomElement = array[Math.floor(Math.random() * array.length)];
+                let temp = document.getElementsByName(`q${c}`);
+                temp[randomElement].setAttribute("checked", "true");
+            }
+        })
+    </script>
     <center><button id="Sub" type="button" style="height:80px;width:140px">Wyślij</button></center>
     <br />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-    </script>
     <script src="./scripts.js">
     </script>
     <p id="output">
         Sample Text
     </p>
     <canvas id="myChart" style="width:100%;max-width:900px"></canvas>
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <!--<script>
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>-->
 </body>
 </html>
