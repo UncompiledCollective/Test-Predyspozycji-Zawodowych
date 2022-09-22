@@ -1,10 +1,47 @@
-
 header {
     margin: 0 auto;
     width: 1000px;
     font: 1em sans-serif;
 }
+.box span {
+    display: block;
+    padding-left: 350px;
+}
+box {
+    width: 350px;
+    height: 200px;
+    border: 0px solid #ccc;
+    text-align: justify;
+    word-break: keep-all;
+}
+.box p{
+    text-align: center;
+}
+button {
+    margin: auto;
+    width: 50%;
+    display: block;
+    color: black;
+    display: inline;
+    margin: 30px;
+}
 
+.center {
+    text-align: center;
+    height: 200px;
+    position: relative;
+}
+    .center .container {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }   
+button:hover {
+        background: #f7f7f7;
+        border: 1px solid #8b8b8b;
+    }
 body {
     /* Center the form on the page */
     margin: 0 auto;
@@ -36,22 +73,8 @@ radio {
     /* Uniform text field size */
     width: 30px;
 }
-
     input:focus,
     textarea:focus {
         /* Additional highlight for focused elements */
         border-color: #000;
     }
-
-
-
-.button {
-    /* Align buttons with the text fields */
-    padding-left: 90px; /* same size as the label elements */
-}
-
-button {
-    /* This extra margin represent roughly the same space as the space
-     between the labels and their text fields */
-    margin-left: 0.5em;
-}

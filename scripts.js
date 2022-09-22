@@ -1,4 +1,4 @@
-const Pers = {
+const Pers = { //variables used in the personality test. With a method to assign them values (I chose the name val becaues value was fucking up)
     Ling: {
         val: 0,
         desc: "Lingwistyczna",
@@ -50,15 +50,112 @@ const Pers = {
     },
 
 }
+
+//functions below serve as html element constructors. You can replace, add(as a child) a paragraph, and add a button(as a child node).
+function replaceParagraph(newElID, text, targetID) {
+    let temp = document.createElement("div");
+    temp.appendChild(document.createElement("p"));
+    Object.assign(temp, {
+        id: `${newElID}`,
+    })
+    temp.setAttribute("class", "center")
+    temp.lastChild.append(`${text}`)
+    document.getElementById(`${targetID}`).replaceWith(temp)
+}
+function addButton(buttonID, buttonText, width, height, locationId) {
+    let temp = document.createElement("div")
+    temp.setAttribute("class", "container")
+    let button = document.createElement("button")
+    Object.assign(button, {
+        id: `${buttonID}`,
+        type: "button",
+        style: {}
+    })
+    Object.assign(button.style, {
+        display: "block",
+        width: `${width}px`,
+        height: `${height}px`,
+
+    })
+    button.append(`${buttonText}`)
+    temp.appendChild(button)
+    document.getElementById(`${locationId}`).appendChild(temp)
+}
+
+function createParagraph(newElID, text, targetID) {
+    let temp = document.createElement("div");
+    temp.appendChild(document.createElement("span"));
+    Object.assign(temp, {
+        id: `${newElID}`
+    })
+    temp.lastChild.append(`${text}`)
+    document.getElementById(`${targetID}`).appendChild(temp)
+}
+
+//this block will contain everything related to Konami code
+function isEqual(g, h) { //used to check if the konamiVars.test is equal to the Konami code
+    if (Array.isArray(g) && Array.isArray(h) &&
+        g.length === h.length &&
+        g.every(function (x, index) {
+            return x === h[index]
+        })
+    ) {
+        return true
+    } else {return false }
+}
+
+const konamiVars = {
+    test: [],
+    check: ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']
+} 
+
+//main code block for the konamiCode
+//so basicly I made a keylogger that sends data to Konami function to test, if the test is passed it executes and than it returns stuff
+//at the end Konami() delets the event listener from inputTracker and returns a secret sentence and a secret button
+function Konami() {
+    if (konamiVars.test.length > 10) {
+        konamiVars.test.splice(0, 1)
+    }
+    if (isEqual(konamiVars.test, konamiVars.check)) {
+        console.log("we've won!");
+        const secretMessage = replaceParagraph("secretDiv", "You've found a secret!", "hiddenOne")
+        const secretButton = addButton("konamiButton", "Auto Answer", 120, 85, "secretDiv" )
+        document.removeEventListener("keydown", placeholder);
+        secretButtonBrain = document.getElementById("konamiButton")
+        secretButtonBrain.addEventListener("click", function () {
+            AutoBot.bind(this)();
+        })
+    }
+}
+function placeholder(e) { // to use removeListener I had to make a callback function instead of writing it directly to inputTracker.
+    if (e.repeat) return;
+    console.log(e.key);
+    konamiVars.test.push(e.key)
+    Konami()
+}
+var inputTracker = document.addEventListener("keydown", placeholder)
+// functions below pertains to secret button created by the Konami Code blocks
+
+var secretButtonBrain;
+function AutoBot() {
+    let array = [0, 1, 2, 3, 4, 5];
+    for (c = 1; c <= 32; c++) {
+        const randomElement = array[Math.floor(Math.random() * array.length)];
+        let temp = document.getElementsByName(`q${c}`);
+        temp[randomElement].setAttribute("checked", "true");
+    }
+}
+//functions below pretain to the send button and its functionality
 var names = []; // making a variable that I will use later to loop through personality names (MoKi, Viz...)
 for (y = 0; y < 8; y++) {
     names.push(Object.entries(Pers)[y][0])
 }
-function reset() {
+function reset() {// function used to reset the values of Pers.name.val //Is no longer used siince update to newer chart.js
     for (x in Pers) {
         Pers[x].val = 0
     }
 }
+
 function Validate() { //function used to validate if every question has been answered
     for (x = 1; x <=  32; x++) {
         let temp = 0;
@@ -74,8 +171,11 @@ function Validate() { //function used to validate if every question has been ans
 
     }return true
 }
+var barChart;
 const button = document.getElementById("Sub")
 button.onclick = function () {
+    try { barChart.destroy() }
+    catch { console.log("initiating the first chart") }
     if (Validate() == false) {
         //console.log(validation(failed))
     }
@@ -94,13 +194,12 @@ button.onclick = function () {
             descriptions.push(Object.entries(Pers)[b][1].desc)
         }
         let barColors = ["red", "green", "blue", "orange", "brown", "magenta", "pink", "purple"];
-        console.log(values);
         const chartID = document.getElementById("myChart");
         //global options:
         //Chart.defaults.global.defaultFontColor = "Red";
         //Chart.defaults.global.defaultFontFamily = "Arial";
         
-        const barChart = new Chart(chartID, {
+        barChart = new Chart(chartID, {
             type: "bar",// bar, horizontalBar, pie, line, donghnut, radar, polarArea
             data: {
                 labels: descriptions,
@@ -165,56 +264,23 @@ button.onclick = function () {
             }
 
         });
+        function returnString(targetID) {
+            for (h = 0; h < 8; h++) {
+                let temp = document.createElement("span");
+                temp.innerHTML = `${Object.entries(Pers)[h][1].desc}: ${Object.entries(Pers)[h][1].val} punktow` 
+                document.getElementById(targetID).appendChild(temp)
+            }
 
-        //let CHART = new Chart("myChart", {
-        //    type: "bar",
-        //    data: {
-        //        labels: descriptions,
-        //        datasets: [{
-        //            label: "Oto twoj profil uzdolnien:",
-        //            data: values,
-        //            backgroundColor: barColors,
-        //            borderColor: [
-        //                'rgba(255, 99, 132, 1)',
-        //                'rgba(54, 162, 235, 1)',
-        //                'rgba(255, 206, 86, 1)',
-        //                'rgba(75, 192, 192, 1)',
-        //                'rgba(153, 102, 255, 1)',
-        //                'rgba(255, 159, 64, 1)',
-        //                'rgba(420, 160, 50, 1',
-        //                'rgba(444, 200, 100, 1'
-
-        //            ],
-        //            borderWidth: 1,
-        //            fill: false,
-        //            borderCapStyle: 'butt',
-        //            borderDash: [5, 5],
-        //        }],
-        //        options: {
-        //        animations: {
-        //            tension: {
-        //                duration: 1000,
-        //                easing: 'linear',
-        //                from: 1,
-        //                to: 0,
-        //                loop: true
-        //            }
-        //        },
-        //        scales: {
-        //            y: { // defining min and max so hiding the dataset does not change scale range
-        //                min: 0,
-        //                max: 100
-        //            }
-        //        }
-        //    }
-        //    }
-        //});
-        console.log(barChart.options.scales, "here")
-        //Pers.MoKi.val += parseInt(document.querySelector(`input[name="q1"]:checked`).value);
+        } try {
+            replaceParagraph("persProf", "Twoj profil uzdolnien to:", "outcomeText")
+            document.getElementById("persProf").setAttribute("class", "box")
+            returnString("persProf")
+        } catch {
+            let temp = document.getElementById("persProf").children[0]
+            document.getElementById("persProf").innerHTML = "";
+            document.getElementById("persProf").appendChild(temp);
+            returnString("persProf");
+        }
         reset()
-        CHART = 0
-        return document.getElementById("output").innerHTML = `
-<p>This are the results:<p>
-<p><p>
-`}
+}
 }
